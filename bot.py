@@ -3,7 +3,7 @@ from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     keyboard = [[
-        InlineKeyboardButton("Open Solar Mini ☀️", web_app={"url": "https://solar-mini.vercel.app"})
+        InlineKeyboardButton("Open Solar Mini ☀️", web_app={"url": "https://https://not88g.github.io/solar-mini/"})
     ]]
     await update.message.reply_text("Welcome to Solar Mini!", reply_markup=InlineKeyboardMarkup(keyboard))
 
