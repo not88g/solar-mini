@@ -2,14 +2,15 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Solar Mini</title>
+    <title>☀️ Solar Mini</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
-    <!-- Onboarding (shown first run) -->
+    <!-- Onboarding -->
     <div id="onboarding" class="sheet hidden">
       <button id="obClose" class="round-x">×</button>
       <div class="sheet-icon">👤</div>
@@ -31,9 +32,7 @@
 
     <!-- HOME -->
     <div class="home-screen" id="homeScreen">
-      <header class="home-header">
-        <h1>☀️ Solar Mini</h1>
-      </header>
+      <header class="home-header"><h1>☀️ Solar Mini</h1></header>
 
       <div class="home-content">
         <div class="chat-card" id="savedCard">
@@ -48,12 +47,6 @@
           <p>Use Search to find people by display name.</p>
         </div>
       </div>
-
-      <!-- GLASS NAV -->
-      <nav class="glass-nav">
-        <button class="nav-btn active" id="chatsBtn">💬 <span>Chats</span></button>
-        <button class="nav-btn" id="searchBtn">🔍 <span>Search</span></button>
-      </nav>
     </div>
 
     <!-- SEARCH -->
@@ -68,20 +61,60 @@
       </div>
     </div>
 
-    <!-- CHAT (Saved Messages) -->
+    <!-- PROFILE -->
+    <div id="profilePanel" class="panel hidden">
+      <header class="panel-header">
+        <button class="back-btn" id="profileBack">←</button>
+        <h1>Profile</h1>
+      </header>
+      <div class="panel-body profile-body">
+        <img id="profileAvatar" class="profile-avatar" src="" alt="Profile picture" />
+        <h2 id="profileName" class="profile-name">Your Name</h2>
+
+        <div class="section">
+          <div class="section-item">🎨 Personalisation</div>
+          <div class="section-item" id="aboutBtn">ℹ️ About</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ABOUT -->
+    <div id="aboutPanel" class="panel hidden">
+      <header class="panel-header">
+        <button class="back-btn" id="aboutBack">←</button>
+        <h1>About</h1>
+      </header>
+      <div class="panel-body about-body">
+        <div class="about-logo">
+          <span class="s">s</span><span class="mini">mini</span>
+        </div>
+        <pre class="about-info">
+Project name: solar power mobile mini
+Version: 1.1
+Build name: HotAndSexy
+        </pre>
+      </div>
+    </div>
+
+    <!-- CHAT -->
     <div class="chat-screen hidden" id="chatScreen">
       <header class="chat-header">
         <button class="back-btn" id="backBtn">←</button>
         <h1>Saved Messages</h1>
       </header>
-      <div class="chat-messages" id="chatMessages">
-        <!-- Start empty; user-only messages -->
-      </div>
+      <div class="chat-messages" id="chatMessages"></div>
       <div class="chat-input">
         <input type="text" placeholder="Type a message..." id="msgInput" />
         <button id="sendBtn">➤</button>
       </div>
     </div>
+
+    <!-- NAVBAR -->
+    <nav class="glass-nav">
+      <button class="nav-btn active" id="chatsBtn">💬 <span>Chats</span></button>
+      <button class="nav-btn" id="searchBtn">🔍 <span>Search</span></button>
+      <button class="nav-btn" id="profileBtn">👤 <span>Profile</span></button>
+    </nav>
 
     <script src="script.js"></script>
   </body>
