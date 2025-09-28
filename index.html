@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Solar Mini</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Onboarding (shown first run) -->
+    <div id="onboarding" class="sheet hidden">
+      <button id="obClose" class="round-x">×</button>
+      <div class="sheet-icon">👤</div>
+      <h2>Set up your profile</h2>
+      <p class="sub">Add a display name and photo.</p>
+
+      <label class="field">
+        <span>Display Name</span>
+        <input id="obName" type="text" placeholder="Your name" />
+      </label>
+
+      <label class="field file">
+        <span>Profile Picture</span>
+        <input id="obFile" type="file" accept="image/*" />
+      </label>
+
+      <button id="obContinue" class="cta">Continue</button>
+    </div>
+
+    <!-- HOME -->
+    <div class="home-screen" id="homeScreen">
+      <header class="home-header">
+        <h1>☀️ Solar Mini</h1>
+      </header>
+
+      <div class="home-content">
+        <div class="chat-card" id="savedCard">
+          <div class="avatar bubble">💾</div>
+          <div class="meta">
+            <div class="title">Saved Messages</div>
+            <div class="last">Your personal cloud notes</div>
+          </div>
+        </div>
+
+        <div class="placeholder">
+          <p>Use Search to find people by display name.</p>
+        </div>
+      </div>
+
+      <!-- GLASS NAV -->
+      <nav class="glass-nav">
+        <button class="nav-btn active" id="chatsBtn">💬 <span>Chats</span></button>
+        <button class="nav-btn" id="searchBtn">🔍 <span>Search</span></button>
+      </nav>
+    </div>
+
+    <!-- SEARCH -->
+    <div id="searchPanel" class="panel hidden">
+      <header class="panel-header">
+        <button class="back-btn" id="searchBack">←</button>
+        <h1>Search</h1>
+      </header>
+      <div class="panel-body">
+        <input id="searchInput" class="search" type="search" placeholder="Search by display name" />
+        <div id="results" class="list"></div>
+      </div>
+    </div>
+
+    <!-- CHAT (Saved Messages) -->
+    <div class="chat-screen hidden" id="chatScreen">
+      <header class="chat-header">
+        <button class="back-btn" id="backBtn">←</button>
+        <h1>Saved Messages</h1>
+      </header>
+      <div class="chat-messages" id="chatMessages">
+        <!-- Start empty; user-only messages -->
+      </div>
+      <div class="chat-input">
+        <input type="text" placeholder="Type a message..." id="msgInput" />
+        <button id="sendBtn">➤</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
