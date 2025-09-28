@@ -7,6 +7,6 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     ]]
     await update.message.reply_text("Welcome to Solar Mini!", reply_markup=InlineKeyboardMarkup(keyboard))
 
-app = ApplicationBuilder().token("YOUR_BOT_TOKEN_HERE").build()
+app = ApplicationBuilder().token("8409487929:AAGmw8q3IzA9IEs3HDXBU214RXDJ-WNxTZE").build()
 app.add_handler(CommandHandler("start", start))
 app.run_polling()
