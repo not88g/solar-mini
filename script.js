@@ -3,7 +3,7 @@ const tg = window.Telegram.WebApp;
 tg.expand();
 
 const SUPABASE_URL = "https://qntplsebbronfdwzwetc.supabase.co";           // <- your URL
-const SUPABASE_KEY = "YOUR_PUBLIC_ANON_KEY";                                // <- put new anon key
+const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFudHBsc2ViYnJvbmZkd3p3ZXRjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTkwNzI0NzcsImV4cCI6MjA3NDY0ODQ3N30.MET22TTJ8X4sep-Vz04dUzoiBe4Rh7JTBkyPPu-I1cg";                                // <- put new anon key
 const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
 // Elements
